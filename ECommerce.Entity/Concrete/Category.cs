@@ -7,25 +7,12 @@ using System.Threading.Tasks;
 
 namespace ECommerce.Entity.Concrete
 {
-    public class Product :BaseEntity
+    public class Category : BaseEntity
     {
         public string Name { get; set; }
         public string Description { get; set; }
         public string ImageUrl { get; set; }
-        public decimal UnitPrice { get; set; }
-        public short UnitsInStock { get; set; }
-
-
         public bool isActive { get; set; }
-        public bool isDeleted { get; set; }
-
-       
-        public int CategoryId { get; set; }
-
-        public DateTime CreatedDate { get; set; } = DateTime.UtcNow;
-        public DateTime ModifiedDate { get; set; }
-
-        public Category Category { get; set; }
         public ICollection<ProductCategory> ProductCategories { get; set; } = new HashSet<ProductCategory>();
     }
 }
