@@ -13,7 +13,7 @@ namespace ECommerce.Entity.Concrete
         public string Description { get; set; }
         public string ImageUrl { get; set; }
         public decimal UnitPrice { get; set; }
-        public short UnitsInStock { get; set; }
+        public int UnitsInStock { get; set; }
 
 
         public bool isActive { get; set; }
@@ -25,7 +25,8 @@ namespace ECommerce.Entity.Concrete
         public DateTime CreatedDate { get; set; } = DateTime.UtcNow;
         public DateTime ModifiedDate { get; set; }
 
-        public Category Category { get; set; }
+       
+        public ICollection<BasketItem> BasketItems { get; set; }
         public ICollection<ProductCategory> ProductCategories { get; set; } = new HashSet<ProductCategory>();
     }
 }
